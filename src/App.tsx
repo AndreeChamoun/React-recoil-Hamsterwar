@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="app">
       <header>
-      <h2> Hamsters wars!</h2>
+      <h2> Hamsterwars!</h2>
         <nav>
           <Link to="/"> Start</Link>
           <Link to="/war"> Battle! </Link>
