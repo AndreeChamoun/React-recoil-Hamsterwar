@@ -55,8 +55,7 @@ const Start = () => {
           : "Loading"}
       </main>
     </section>
-    <footer className={styles.footer}>
-      </footer></>
+</>
   );
 };
 
