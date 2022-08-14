@@ -176,8 +176,8 @@ const GetRandom = () => {
 
       {wins != null ?
         <div className={styles.winninghamster}>
-          <p> 🏆The winner is {wins.name} 🏆
-          <br /> Total victory-{wins.wins} <br />Total defeats-{wins.defeats} <br />Total matches-{wins.games} </p>
+          <p> 🥇 The winner is {wins.name} 🥇
+          <br /> Total victory= {wins.wins} <br />Total defeats= {wins.defeats} <br />Total matches= {wins.games} </p>
           <button className={styles.newbattle}onClick={NewBattle}>Start a new match</button>
         </div>
         : <p></p>}
