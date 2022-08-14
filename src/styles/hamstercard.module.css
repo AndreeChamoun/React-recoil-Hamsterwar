@@ -1,0 +1,24 @@
+.wrapperGallery{
+  flex-wrap: wrap;
+  margin-top: 3em;
+  margin: auto;
+}
+
+.wrapperGallery p{
+  border-radius: 20px;
+  padding-top: 1em;
+}
+.hamsterInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hamsterPic{
+  width: 600px;
+  border-radius: 1rem 1rem 0 0;
+}
+.delete{
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}

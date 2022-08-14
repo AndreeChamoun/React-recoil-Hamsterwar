@@ -1,0 +1,38 @@
+.container {
+    text-align: center;
+  }
+
+.hamsterPic{
+  width: 600px;
+  border-radius: 1rem 1rem 0 0;
+}
+.head{
+  margin-top: 1px;
+}
+.add{
+  background-color: #f2d5ce;
+  margin: .6rem;
+  font-family: "Quicksand";
+  color: #2a4759;
+  font-weight: 700;
+  border: 2px solid #f2af5c;
+  border-radius: .6rem;
+  transition: transform .2s linear,background-color .3s ease;
+}
+.wrapping{
+  display: flex;
+  flex-wrap: wrap;
+}
+.add:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: #f2af5c;
+}
+
+@media screen and (min-width: 600px) {
+  .add{
+    padding: .9rem 1.7rem;
+    font-size: 1.5rem;
+  }
+
+}
