@@ -14,7 +14,7 @@ function picImport(imgName: string) {
 	  return imgName
 
 	} else {
-	  return makeImg((`/img/${imgName}`))
+	  return makeImg((`/HamsterPictures/${imgName}`))
 	}
   }
   export { picImport }

@@ -12,7 +12,7 @@ import hamsters from './routes/hamsters.js'
 
 const PORT = process.env.PORT || 1999;
 //const staticFolder = path.join(__dirname, 'public');
-const picsFolder = path.join(__dirname, 'img');
+const picsFolder = path.join(__dirname, 'HamsterPictures');
 //Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use((req, _res, next) => {
@@ -23,7 +23,7 @@ app.use((req, _res, next) => {
 app.use( express.json() );
 app.use( cors() );
 //app.use( express.static(staticFolder) );
-app.use('/img', express.static(picsFolder) );
+app.use('/HamsterPictures', express.static(picsFolder) );
 app.use(express.static(distPath));
 
 
