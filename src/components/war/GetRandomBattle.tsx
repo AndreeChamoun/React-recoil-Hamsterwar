@@ -114,30 +114,52 @@ const GetRandom = () => {
       })
     }
   }
+ const NewBattle = () => {
+  sethamsterOne(null)
+  sethamsterTwo(null)
+  setwins(null)
+  setlost(null)
+  sethamsterOneWin(false)
+  sethamsterTwoWin(false)
 
-  const NewBattle = () => {
-    window.location.reload();
+
+  async function receiveData1() {
+    const response: Response = await fetch(makeImg('/hamsters/random'))
+    const apiData: any = await response.json()
+
+    sethamsterOne(apiData as HamsterModel)
   }
-  useEffect(() => {
-    async function getData() {
-      const response: Response = await fetch(makeImg('/hamsters/random'))
-      const apiData: any = await response.json()
+  receiveData1()
 
-      sethamsterOne(apiData as HamsterModel)
-    }
-    getData()
 
-  }, [])
-  useEffect(() => {
-    async function getData() {
-      const response: Response = await fetch(makeImg('/hamsters/random'))
-      const apiData: any = await response.json()
+  async function receiveData2() {
+    const response: Response = await fetch(makeImg('/hamsters/random'))
+    const apiData: any = await response.json()
 
-      sethamsterTwo(apiData as HamsterModel)
-    }
-    getData()
+    sethamsterTwo(apiData as HamsterModel)
+  }
+  receiveData2()
+}
+useEffect(() => {
+  async function getData() {
+    const response: Response = await fetch(makeImg('/hamsters/random'))
+    const apiData: any = await response.json()
 
-  }, [])
+    sethamsterOne(apiData as HamsterModel)
+  }
+  getData()
+
+}, [])
+useEffect(() => {
+  async function getData() {
+    const response: Response = await fetch(makeImg('/hamsters/random'))
+    const apiData: any = await response.json()
+
+    sethamsterTwo(apiData as HamsterModel)
+  }
+  getData()
+
+}, [])
 
   return (
     <div className={styles.battle}>
