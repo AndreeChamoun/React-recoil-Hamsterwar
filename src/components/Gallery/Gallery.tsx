@@ -38,7 +38,7 @@ const Gallery = () => {
       <main className={styles.mainContent}>
         <div className={styles.wrapping}>
           {data
-            ? data.map((hamster) => (
+            ? data.map((hamster: HamsterModel) => (
                 <HamsterCard
                   hamster={hamster}
                   key={Math.floor(Math.random() * 100) + hamster.id}
