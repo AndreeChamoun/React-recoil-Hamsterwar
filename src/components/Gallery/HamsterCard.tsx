@@ -18,7 +18,7 @@ const HamsterCard = ({ hamster }: Props) => {
     <div className={styles.wrapperGallery}>
         <div className={styles.hamsterInfo}>
           {hamster.imgName && (
-            <img className={styles.hamsterPic} src={`/img/${hamster.imgName}`} alt="Bild på hamster" />
+            <img className={styles.hamsterPic} src={`/HamsterPictures/${hamster.imgName}`} alt="Bild på hamster" />
           )}
           {hamster.name}
           <p>
