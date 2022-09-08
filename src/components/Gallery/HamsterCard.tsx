@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { useRecoilState } from 'recoil';
 import styles from "../../styles/hamstercard.module.css"
 import { HamsterModel } from "../../models/HamsterModel";
@@ -46,7 +45,7 @@ const response: Response = await fetch(makeImg(`/hamsters/${hamster.id}`), {
           <p>
             {hamster.name} loves {hamster.loves} and eating {hamster.favFood}
           </p>
-          <button className={styles.hamsterCard}onClick={() => hamsterCard}>
+          <button className={styles.delete} onClick={() => hamsterCard()}>
             Remove Hamster
           </button>
         </div>
