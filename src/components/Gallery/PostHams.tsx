@@ -1,12 +1,12 @@
+import { makeImg } from "../../utils";
 import { FormEvent, useState } from "react";
 import { useRecoilState } from "recoil";
 import allHamsters from "../../atoms/allHamsters";
 import { HamsterModel } from "../../models/HamsterModel";
-import { makeImg } from "../../utils";
 import styles from "../../styles/posthams.module.css";
 
 
-const PostHamster = () => {
+const PostHamster = () => { 
   const [name, setName] = useState<string>('')
   const [age, setAge] = useState<string>('')
   const [favFood, setFavFood] = useState<string>('')
@@ -77,6 +77,7 @@ const PostHamster = () => {
             onChange={event => setName(event.target.value)}
 
           />
+          {nameIsValid === false ? <p>Write a name, only letters.</p> : <p>Success!</p>}
           <input
             className={styles.forms}
             type="number"
@@ -84,6 +85,7 @@ const PostHamster = () => {
             value={age}
             onChange={event => setAge(event.target.value)}
           />
+          {ageIsValid === false ? <p>Write in age, only numbers</p> : <p>Success!</p>}
           <input
             className={styles.forms}
             type="text"
@@ -92,6 +94,7 @@ const PostHamster = () => {
             onChange={event => setFavFood(event.target.value)}
 
           />
+          {favFoodIsValid === false ? <p>Write in what hamster loves to eat, only letters</p> : <p>Success!</p>}
           <input
             className={styles.forms}
             type="text"
@@ -100,6 +103,8 @@ const PostHamster = () => {
             onChange={event => setLoves(event.target.value)}
 
           />
+           {lovesIsValid === false ? <p>Write in hamsters passion</p> : <p>Success!</p>}
+
           <input
             className={styles.forms}
             type="text"
@@ -107,6 +112,7 @@ const PostHamster = () => {
             value={imgName}
             onChange={event => setImgName(event.target.value)}
           />
+           {imgNameIsValid === false ? <p>Enter a web link or upload an image </p> : <p>Success!</p>}
           <button className={styles.forms} disabled={!formIsValid} onClick={handleAddHamster}>
             Add a hamster
           </button>
