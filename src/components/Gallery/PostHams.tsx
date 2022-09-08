@@ -6,7 +6,7 @@ import { HamsterModel } from "../../models/HamsterModel";
 import styles from "../../styles/posthams.module.css";
 
 
-const PostHamster = () => { 
+const PostHamster = () => {
   const [name, setName] = useState<string>('')
   const [age, setAge] = useState<string>('')
   const [favFood, setFavFood] = useState<string>('')
@@ -27,12 +27,12 @@ const PostHamster = () => {
     id: ''
   }
 
-  const nameIsValid = newHamster.name !== ''
-  const ageIsValid = newHamster.age >= 1 && Number.isInteger(newHamster.age) === true
-  const favFoodIsValid = newHamster.favFood !== ''
-  const lovesIsValid = newHamster.loves !== ''
-  const imgNameIsValid = newHamster.imgName !== ''
-  const formIsValid = nameIsValid && ageIsValid && favFoodIsValid && lovesIsValid && imgNameIsValid
+  const nameValidation = newHamster.name !== ''
+  const ageValidation = newHamster.age >= 1 && Number.isInteger(newHamster.age) === true
+  const favFoodValidation = newHamster.favFood !== ''
+  const loveValidation = newHamster.loves !== ''
+  const imgnameValidation = newHamster.imgName !== ''
+  const formIsValid = nameValidation && ageValidation && favFoodValidation && loveValidation && imgnameValidation
 
 
   const handleAddHamster = async () => {
@@ -69,15 +69,15 @@ const PostHamster = () => {
     <div>
       <section>
         <form onSubmit={(e) => onClickPrevDefault(e, data)}>
+          {nameValidation === false ? <p>Write a name</p> : <p>Success!</p>}
           <input
             className={styles.forms}
             type="text"
             placeholder="Name"
             value={name}
             onChange={event => setName(event.target.value)}
-
           />
-          {nameIsValid === false ? <p>Write a name, only letters.</p> : <p>Success!</p>}
+            {ageValidation === false ? <p>Write in age</p> : <p>Success!</p>}
           <input
             className={styles.forms}
             type="number"
@@ -85,26 +85,23 @@ const PostHamster = () => {
             value={age}
             onChange={event => setAge(event.target.value)}
           />
-          {ageIsValid === false ? <p>Write in age, only numbers</p> : <p>Success!</p>}
+            {favFoodValidation === false ? <p>Write in what hamster loves to eat</p> : <p>Success!</p>}
           <input
             className={styles.forms}
             type="text"
             placeholder="Food"
             value={favFood}
             onChange={event => setFavFood(event.target.value)}
-
           />
-          {favFoodIsValid === false ? <p>Write in what hamster loves to eat, only letters</p> : <p>Success!</p>}
+            {loveValidation === false ? <p>Write in hamsters passion</p> : <p>Success!</p>}
           <input
             className={styles.forms}
             type="text"
             placeholder="Loves"
             value={loves}
             onChange={event => setLoves(event.target.value)}
-
           />
-           {lovesIsValid === false ? <p>Write in hamsters passion</p> : <p>Success!</p>}
-
+            <button className={styles.forms} disabled={!formIsValid} onClick={handleAddHamster}>
           <input
             className={styles.forms}
             type="text"
@@ -112,8 +109,7 @@ const PostHamster = () => {
             value={imgName}
             onChange={event => setImgName(event.target.value)}
           />
-           {imgNameIsValid === false ? <p>Enter a web link or upload an image </p> : <p>Success!</p>}
-          <button className={styles.forms} disabled={!formIsValid} onClick={handleAddHamster}>
+           {imgnameValidation === false ? <p>Enter a web link or upload an image </p> : <p>Success!</p>}
             Add a hamster
           </button>
         </form>

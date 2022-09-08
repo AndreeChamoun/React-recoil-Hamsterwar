@@ -24,7 +24,7 @@ const response: Response = await fetch(makeImg(`/hamsters/${hamster.id}`), {
 	body: null
   })
   if (response.status === 200) {
-	
+
 
 	async function getData() {
 	  const response: Response = await fetch(makeImg('/hamsters/'))
@@ -46,7 +46,7 @@ const response: Response = await fetch(makeImg(`/hamsters/${hamster.id}`), {
           <p>
             {hamster.name} loves {hamster.loves} and eating {hamster.favFood}
           </p>
-          <button onClick={() => hamsterCard}>
+          <button className={styles.hamsterCard}onClick={() => hamsterCard}>
             Remove Hamster
           </button>
         </div>
@@ -54,5 +54,3 @@ const response: Response = await fetch(makeImg(`/hamsters/${hamster.id}`), {
   );
 };
 export default HamsterCard;
-
-
