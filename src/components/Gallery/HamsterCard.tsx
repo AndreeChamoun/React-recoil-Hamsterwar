@@ -52,7 +52,3 @@ const HamsterCard = ({ hamster }: Props) => {
   );
 };
 export default HamsterCard;
-function useRecoilState<T>(allHamsters: any): [any, any] {
-	throw new Error("Function not implemented.");
-}
-
