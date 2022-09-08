@@ -34,23 +34,21 @@ const HamsterCard = ({ hamster }: Props) => {
   
 	}
   return (
-    <div className={styles.wrapperGallery}>
-        <div className={styles.hamsterInfo}>
-          {hamster.imgName && (
-            <img className={styles.hamsterPic} src={picImport(hamster.imgName)} alt="Bild på hamster" />
-          )}
-          {hamster.name}
-		  		<h3>Name: {hamster.name}</h3> 
+<div className={styles.wrapperGallery}>
+			<div className={styles.hamsterInfo}>
+		  <img className={styles.hamsterPic} src={picImport(hamster.imgName)} />
+      {/* The information about the hamster */}
+		  	<h3>Name: {hamster.name}</h3> 
 				<p> Age: {hamster.age}<br />
-				Loves: {hamster.loves}<br />
 				Favorite Food: {hamster.favFood} <br />
+				Loves: {hamster.loves}<br />
+				Matches: {hamster.games}</p>
 				Wins: {hamster.wins}<br />
 				Defeats: {hamster.defeats}<br />
-				Matches: {hamster.games}</p>
 
-				<button className={styles.delete} onClick={() => hamsterCard}>Delete Hamster</button>
-        </div>
-    </div>
+				<button className={styles.delete} onClick={() => hamsterCard()}>Delete Hamster</button>
+			</div>
+		</div>
   );
 };
 export default HamsterCard;
