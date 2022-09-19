@@ -41,10 +41,12 @@ const response: Response = await fetch(makeImg(`/hamsters/${hamster.id}`), {
           {hamster.imgName && (
             <img className={styles.hamsterPic} src={`/HamsterPictures/${hamster.imgName}`} alt="Bild på hamster" />
           )}
-          {hamster.name}
-          <p>
-            {hamster.name} loves {hamster.loves} and eating {hamster.favFood}
-          </p>
+        <h3>Name: {hamster.name}</h3> is <p> Age: {hamster.age} old.<br />
+				{hamster.name} Loves: {hamster.loves}<br />
+				Favorite Food: {hamster.favFood} <br />
+				Matches: {hamster.games}</p>
+				Wins: {hamster.wins}<br />
+				Defeats: {hamster.defeats}<br />
           <button className={styles.delete} onClick={() => hamsterCard()}>
             Remove Hamster
           </button>

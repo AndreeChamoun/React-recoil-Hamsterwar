@@ -110,8 +110,8 @@ const PostHamster = () => {
             onChange={event => setImgName(event.target.value)}
           />
            {imgnameValidation === false ? <p>Enter a web link or upload an image </p> : <p>Success!</p>}
-            Add a hamster
           </button>
+            Add a hamster
         </form>
       </section>
     </div>
