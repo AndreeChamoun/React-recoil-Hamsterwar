@@ -85,7 +85,15 @@ const PostHamster = () => {
             value={age}
             onChange={event => setAge(event.target.value)}
           />
+            <input
+            className={styles.forms}
+            type="text"
+            placeholder="Food"
+            value={favFood}
+            onChange={event => setFavFood(event.target.value)}
+          />
             {favFoodValidation === false ? <p>Write in what hamster loves to eat</p> : <p>Success!</p>}
+
             <input
             className={styles.forms}
             type="text"
