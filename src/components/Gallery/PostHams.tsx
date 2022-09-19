@@ -93,7 +93,7 @@ const PostHamster = () => {
             value={loves}
             onChange={event => setLoves(event.target.value)}/>
 
-          {loveValidation === false ? <p>Please write what hamster loves to do</p> : <p>Done!</p>}
+          {loveValidation === false ? <p>Please write what hamster loves to do</p> : <p>Success!</p>}
 
           <input
             className={styles.forms}
@@ -101,7 +101,7 @@ const PostHamster = () => {
             placeholder="Picture/link"
             value={imgName}
             onChange={event => setImgName(event.target.value)}/>
-          {imgnameValidation === false ? <p>Enter a web link or upload an image </p> : <p>Done!</p>}
+          {imgnameValidation === false ? <p>Enter a web link or upload an image </p> : <p>Success!</p>}
           <button className={styles.forms} disabled={!formIsValid} onClick={handleAddHamster}>
             Add a hamster
           </button>
