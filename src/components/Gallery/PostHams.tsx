@@ -75,24 +75,23 @@ const PostHamster = () => {
             type="text"
             placeholder="Name"
             value={name}
-            onChange={event => setName(event.target.value)}
-          />
+            onChange={event => setName(event.target.value)}/>
+
             {ageValidation === false ? <p>Write in age</p> : <p>Success!</p>}
-          <input
+            <input
             className={styles.forms}
             type="number"
             placeholder="Age"
             value={age}
-            onChange={event => setAge(event.target.value)}
-          />
+            onChange={event => setAge(event.target.value)}/>
+
+            {favFoodValidation === false ? <p>Write in what hamster loves to eat</p> : <p>Success!</p>}
             <input
             className={styles.forms}
             type="text"
             placeholder="Food"
             value={favFood}
-            onChange={event => setFavFood(event.target.value)}
-          />
-            {favFoodValidation === false ? <p>Write in what hamster loves to eat</p> : <p>Success!</p>}
+            onChange={event => setFavFood(event.target.value)}/>
 
             <input
             className={styles.forms}
@@ -102,7 +101,6 @@ const PostHamster = () => {
             onChange={event => setLoves(event.target.value)}/>
 
           {loveValidation === false ? <p>Please write what hamster loves to do</p> : <p>Success!</p>}
-
           <input
             className={styles.forms}
             type="text"
