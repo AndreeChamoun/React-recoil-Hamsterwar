@@ -102,6 +102,7 @@ const PostHamster = () => {
             onChange={event => setLoves(event.target.value)}
           />
             <button className={styles.forms} disabled={!formIsValid} onClick={handleAddHamster}>
+              {imgnameValidation === false ? <p>Enter a web link or upload an image </p> : <p>Success!</p>}
           <input
             className={styles.forms}
             type="text"
@@ -109,9 +110,8 @@ const PostHamster = () => {
             value={imgName}
             onChange={event => setImgName(event.target.value)}
           />
-           {imgnameValidation === false ? <p>Enter a web link or upload an image </p> : <p>Success!</p>}
-          </button>
             Add a hamster
+          </button>
         </form>
       </section>
     </div>
