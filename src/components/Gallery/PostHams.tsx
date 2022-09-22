@@ -61,14 +61,14 @@ const PostHamster = () => {
     setImgName('')
 
   }
-  function onClickPrevDefault(e: FormEvent<HTMLFormElement>, data: HamsterModel[]): void {
+  function onClickPrevDefault(e: FormEvent<HTMLElement>, data: HamsterModel[]): void {
     throw new Error("Function not implemented.");
   }
 
   return (
     <div>
       <section>
-        <form onSubmit={(e) => onClickPrevDefault(e, data)}>
+        <article onSubmit={(e) => onClickPrevDefault(e, data)}>
           {nameValidation === false ? <p>Write a name</p> : <p>Success!</p>}
           <input
             className={styles.forms}
@@ -111,7 +111,7 @@ const PostHamster = () => {
           <button className={styles.forms} disabled={!formIsValid} onClick={handleAddHamster}>
             Add a hamster
           </button>
-        </form>
+        </article>
       </section>
     </div>
   );
