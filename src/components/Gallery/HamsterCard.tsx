@@ -3,19 +3,16 @@ import { useRecoilState } from 'recoil';
 import styles from "../../styles/hamstercard.module.css"
 import { HamsterModel } from "../../models/HamsterModel";
 import allHamsters from "../../atoms/allHamsters";
-import { makeImg } from "../../utils";
+import { makeImg, picImport } from "../../utils";
 
 interface Props {
   hamster: HamsterModel;
 }
-// Remove the Hamster
-
-
 const HamsterCard =({hamster }: Props) => {
 const [, setData] = useRecoilState<HamsterModel[]>(allHamsters);
 
 	const hamsterCard = async () => {
-const response: Response = await fetch(makeImg(`/hamsters/${hamster.id}`), {
+  const response: Response = await fetch(makeImg(`/hamsters/${hamster.id}`), {
 	method: 'DELETE',
 	headers: {
 	  'Content-Type': 'application/json'
@@ -38,10 +35,8 @@ const response: Response = await fetch(makeImg(`/hamsters/${hamster.id}`), {
   return (
     <div className={styles.wrapperGallery}>
         <div className={styles.hamsterInfo}>
-          {hamster.imgName && (
-            <img className={styles.hamsterPic} src={`/HamsterPictures/${hamster.imgName}`} alt="Bild på hamster" />
-          )}
-        <h3>Name: {hamster.name}</h3> is <p> Age: {hamster.age} old.<br />
+          {hamster.imgName && (<img className={styles.hamsterPic} src={picImport(hamster.imgName)} alt="Bild på hamster" />)}
+        <h3> Name: {hamster.name}</h3> is <p> Age: {hamster.age} old.<br />
 				{hamster.name} Loves: {hamster.loves}<br />
 				Favorite Food: {hamster.favFood} <br />
 				Matches: {hamster.games}</p>

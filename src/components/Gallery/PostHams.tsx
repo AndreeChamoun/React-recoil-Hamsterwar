@@ -77,7 +77,7 @@ const PostHamster = () => {
             value={name}
             onChange={event => setName(event.target.value)}/>
 
-            {ageValidation === false ? <p>Write in age</p> : <p>Success!</p>}
+            {ageValidation === false ? <p>Enter a positive number</p> : <p>Success!</p>}
             <input
             className={styles.forms}
             type="number"
