@@ -62,6 +62,7 @@ const PostHamster = () => {
 
   }
   function onClickPrevDefault(e: FormEvent<HTMLElement>, data: HamsterModel[]): void {
+    e.preventDefault();
     throw new Error("Function not implemented.");
   }
 
